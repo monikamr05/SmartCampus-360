@@ -2,6 +2,8 @@
 
 **Smart Campus 360** is a full-stack digital campus management platform built for students, faculty, and administrators. It unifies academics, attendance, library, events, analytics, and notifications into a single, role-aware application.
 
+Live Demo: https://smart-campus-360-amber.vercel.app/
+
 ---
 
 ## 📸 Project Overview
