@@ -258,12 +258,31 @@ npm run dev
 
 The Vite dev server proxies all `/api/*` requests to `http://localhost:5000` automatically — no extra configuration needed.
 
-### 4 — Create your first admin account
+### 4 — Login Credentials & Demo Accounts
 
-1. Open [http://localhost:5173](http://localhost:5173)
-2. Click **Get Started** → **Create Account**
-3. Enter your name, email, password, and select **Administrator**
-4. You will be redirected to `/dashboard/admin`
+#### 🔑 Pre-Configured Demo Accounts
+
+You can instantly seed pre-configured demo accounts for all roles by running in your backend:
+
+```bash
+cd backend
+npm run seed:all
+```
+
+| Role | Email | Password | Dashboard |
+|---|---|---|---|
+| 🛡️ **Administrator** | `admin@campus.edu` | `AdminPassword123` | `/dashboard/admin` |
+| 🧑‍🏫 **Faculty** | `faculty@campus.edu` | `FacultyPassword123` | `/dashboard/faculty` |
+| 🎓 **Student** | `student@campus.edu` | `StudentPassword123` | `/dashboard/student` |
+
+> *To seed 5 additional faculty members with different departments, run: `npm run seed:5faculties` (Password: `Faculty@123`).*
+
+#### 📝 Or Register from the UI:
+
+1. Open [http://localhost:5173/login](http://localhost:5173/login)
+2. Click **Create Account**
+3. Enter your name, email, password (min 6 chars, 1 uppercase, 1 number), and choose your role (**Administrator**, **Faculty**, or **Student**)
+4. Click **Create Account →** to automatically log in and access your dashboard.
 
 ---
 
