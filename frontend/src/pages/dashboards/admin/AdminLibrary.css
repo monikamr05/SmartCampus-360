@@ -1,0 +1,5 @@
+/* AdminLibrary */
+.att-view-toggle { display: flex; background: var(--gray-100); border-radius: var(--radius-full); padding: 3px; gap: 2px; }
+.att-view-btn { padding: 0.4rem 0.9rem; border-radius: var(--radius-full); border: none; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: transparent; color: var(--gray-500); font-family: var(--font-sans); transition: var(--transition); }
+.att-view-btn--active { background: var(--white); color: var(--blue-600); box-shadow: var(--shadow-sm); }
+.lib-row--overdue { background: #fff5f5; }

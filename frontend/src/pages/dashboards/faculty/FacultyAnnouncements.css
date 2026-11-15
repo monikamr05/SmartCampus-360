@@ -1,0 +1,17 @@
+/* FacultyAnnouncements */
+.fca-toolbar { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.fca-list    { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.fca-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.fca-card:hover { box-shadow: var(--shadow-md); }
+.fca-card--inactive { opacity: 0.6; border-style: dashed; }
+.fca-card__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.fca-card__header-left { display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+.fca-card__badges { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+.fca-priority-badge { font-size: 0.7rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: var(--radius-full); text-transform: capitalize; }
+.fca-audience-badge { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); background: var(--gray-100); padding: 0.18rem 0.55rem; border-radius: var(--radius-full); text-transform: capitalize; }
+.fca-inactive-badge { font-size: 0.7rem; font-weight: 700; background: var(--gray-100); color: var(--gray-500); padding: 0.18rem 0.55rem; border-radius: var(--radius-full); }
+.fca-card__title   { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); }
+.fca-card__content { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.fca-card__meta    { font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 0.5rem; }
+.fca-card__actions { display: flex; gap: 0.4rem; flex-shrink: 0; }

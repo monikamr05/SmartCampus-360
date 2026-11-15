@@ -1,0 +1,160 @@
+/* =============================================
+   Student Overview Page
+   ============================================= */
+
+.ov-page { gap: 1.5rem; }
+
+/* ── Profile hero ── */
+.ov-hero {
+  display: flex; align-items: center; gap: 1.75rem;
+  background: linear-gradient(135deg, #0a1628 0%, #064e3b 100%);
+  border-radius: var(--radius-xl); padding: 2rem 2.5rem;
+  color: white; flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(5,150,105,0.25);
+}
+.ov-hero__avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: linear-gradient(135deg, #059669, #0891b2);
+  font-size: 1.5rem; font-weight: 800; color: white;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.ov-hero__info { flex: 1; min-width: 200px; }
+.ov-hero__name {
+  font-family: var(--font-display); font-size: 1.5rem;
+  font-weight: 800; color: white; margin-bottom: 0.5rem;
+}
+.ov-hero__meta {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem;
+}
+.ov-hero__meta span { font-size: 0.82rem; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 0.3rem; }
+.ov-hero__ring { flex-shrink: 0; }
+
+/* Attendance ring */
+.att-ring { position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; }
+.att-ring__center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  display: flex; flex-direction: column; align-items: center;
+}
+.att-ring__pct  { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; line-height: 1; }
+.att-ring__label { font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ── Warning banner ── */
+.ov-warning {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: #fef3c7; border: 1.5px solid #fcd34d;
+  border-radius: var(--radius-lg); padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+.ov-warning__icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+.ov-warning__body { flex: 1; min-width: 200px; }
+.ov-warning__body strong { display: block; font-size: 0.9rem; font-weight: 700; color: #92400e; margin-bottom: 0.25rem; }
+.ov-warning__body p { font-size: 0.84rem; color: #78350f; line-height: 1.55; }
+.ov-warning__link {
+  font-size: 0.82rem; font-weight: 700; color: #92400e;
+  text-decoration: none; white-space: nowrap; align-self: center;
+  padding: 0.4rem 0.9rem; background: #fcd34d; border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+.ov-warning__link:hover { background: #fbbf24; }
+
+/* ── Stat cards ── */
+.ov-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+}
+.ov-stat {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; overflow: hidden;
+}
+.ov-stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.ov-stat::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.ov-stat--green::before  { background: linear-gradient(90deg,#059669,#34d399); }
+.ov-stat--teal::before   { background: linear-gradient(90deg,#0891b2,#22d3ee); }
+.ov-stat--orange::before { background: linear-gradient(90deg,#d97706,#fbbf24); }
+.ov-stat--blue::before   { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+.ov-stat__icon { font-size: 1.75rem; width: 48px; height: 48px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ov-stat--green  .ov-stat__icon { background:#f0fdf4; }
+.ov-stat--teal   .ov-stat__icon { background:#ecfeff; }
+.ov-stat--orange .ov-stat__icon { background:#fffbeb; }
+.ov-stat--blue   .ov-stat__icon { background:#eff6ff; }
+.ov-stat__body { display: flex; flex-direction: column; gap: 2px; }
+.ov-stat__value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+.ov-stat__label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── 2-col grid ── */
+.ov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.ov-see-all { font-size: 0.8rem; font-weight: 600; color: #059669; text-decoration: none; white-space: nowrap; }
+.ov-see-all:hover { color: #047857; text-decoration: underline; }
+
+/* Assignments list */
+.ov-assign-list { display: flex; flex-direction: column; gap: 0; list-style: none; }
+.ov-assign-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100); }
+.ov-assign-item:last-child { border-bottom: none; }
+.ov-assign-type {
+  font-size: 0.65rem; font-weight: 700; padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-full); text-transform: capitalize; flex-shrink: 0;
+}
+.ov-assign-type--assignment { background:#eff6ff; color:#2563eb; }
+.ov-assign-type--project    { background:#f5f3ff; color:#7c3aed; }
+.ov-assign-type--quiz       { background:#fef3c7; color:#d97706; }
+.ov-assign-type--lab        { background:#ecfeff; color:#0891b2; }
+.ov-assign-type--presentation { background:#fdf2f8; color:#9333ea; }
+.ov-assign-info { flex:1; min-width:0; display:flex; flex-direction:column; gap:1px; }
+.ov-assign-title  { font-size:0.84rem; font-weight:600; color:var(--gray-900); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ov-assign-course { font-size:0.74rem; color:var(--text-muted); }
+.ov-assign-due { font-size:0.78rem; font-weight:700; color:var(--text-secondary); flex-shrink:0; }
+.ov-assign-due--urgent { color:#dc2626; }
+
+/* Results list */
+.ov-results-list { display:flex; flex-direction:column; gap:0; list-style:none; }
+.ov-result-item { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:0.75rem 0; border-bottom:1px solid var(--gray-100); }
+.ov-result-item:last-child { border-bottom:none; }
+.ov-result-info { display:flex; flex-direction:column; gap:1px; }
+.ov-result-name { font-size:0.875rem; font-weight:600; color:var(--gray-900); }
+.ov-result-code { font-size:0.74rem; color:var(--text-muted); }
+.ov-result-right { display:flex; align-items:center; gap:0.5rem; }
+.ov-grade {
+  width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:0.82rem; flex-shrink:0;
+}
+.ov-grade--ap  { background:#dcfce7; color:#15803d; }
+.ov-grade--a   { background:#d1fae5; color:#065f46; }
+.ov-grade--bp  { background:#dbeafe; color:#1d4ed8; }
+.ov-grade--b   { background:#eff6ff; color:#2563eb; }
+.ov-grade--cp, .ov-grade--c { background:#fef9c3; color:#854d0e; }
+.ov-grade--d   { background:#ffedd5; color:#c2410c; }
+.ov-grade--f   { background:#fee2e2; color:#dc2626; }
+.ov-pass { font-size:0.72rem; font-weight:700; padding:0.18rem 0.5rem; border-radius:var(--radius-full); }
+.ov-pass--pass { background:#dcfce7; color:#16a34a; }
+.ov-pass--fail { background:#fee2e2; color:#dc2626; }
+
+/* Events list */
+.ov-event-list { display:flex; flex-direction:column; gap:0; list-style:none; }
+.ov-event-item { display:flex; align-items:center; gap:0.75rem; padding:0.75rem 0; border-bottom:1px solid var(--gray-100); }
+.ov-event-item:last-child { border-bottom:none; }
+.ov-event-icon { font-size:1.3rem; width:36px; height:36px; background:var(--gray-50); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.ov-event-info { display:flex; flex-direction:column; gap:2px; }
+.ov-event-title { font-size:0.875rem; font-weight:600; color:var(--gray-900); }
+.ov-event-meta  { font-size:0.74rem; color:var(--text-muted); }
+
+/* Announcements */
+.ov-ann-list { display:flex; flex-direction:column; gap:0; list-style:none; }
+.ov-ann-item { padding:0.75rem 0; border-bottom:1px solid var(--gray-100); display:flex; flex-direction:column; gap:0.3rem; }
+.ov-ann-item:last-child { border-bottom:none; }
+.ov-ann-header { display:flex; align-items:center; justify-content:space-between; gap:0.5rem; }
+.ov-ann-title   { font-size:0.875rem; font-weight:700; color:var(--gray-900); }
+.ov-ann-badge   { font-size:0.68rem; font-weight:700; padding:0.18rem 0.5rem; border-radius:var(--radius-full); text-transform:capitalize; flex-shrink:0; }
+.ov-ann-content { font-size:0.8rem; color:var(--text-secondary); line-height:1.55; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.ov-ann-meta    { font-size:0.72rem; color:var(--text-muted); }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) { .ov-stats { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 860px)  { .ov-grid  { grid-template-columns: 1fr; } }
+@media (max-width: 640px)  {
+  .ov-hero { padding: 1.5rem; gap: 1.25rem; }
+  .ov-hero__ring { display:none; }
+  .ov-stats { grid-template-columns: 1fr 1fr; }
+}

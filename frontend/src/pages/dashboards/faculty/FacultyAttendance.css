@@ -1,0 +1,34 @@
+/* FacultyAttendance */
+.att-controls { display: flex; gap: 0.75rem; align-items: center; }
+.att-view-toggle { display: flex; background: var(--gray-100); border-radius: var(--radius-full); padding: 3px; gap: 2px; }
+.att-vbtn { padding: 0.4rem 0.9rem; border-radius: var(--radius-full); border: none; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: transparent; color: var(--gray-500); font-family: var(--font-sans); transition: var(--transition); }
+.att-vbtn--active { background: var(--white); color: var(--fc-accent); box-shadow: var(--shadow-sm); }
+
+.att-toolbar { display: flex; gap: 1.25rem; align-items: flex-end; flex-wrap: wrap; }
+.att-toolbar__group { display: flex; flex-direction: column; gap: 0.3rem; }
+.att-toolbar__group--end { margin-left: auto; }
+
+.att-summary-bar {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1rem 1.5rem;
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  box-shadow: var(--shadow-sm);
+}
+.att-summary-bar__item { display: flex; flex-direction: column; gap: 2px; }
+.att-summary-bar__val  { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; line-height: 1; }
+.att-summary-bar__lbl  { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.att-summary-bar__item--present .att-summary-bar__val { color: #059669; }
+.att-summary-bar__item--absent  .att-summary-bar__val { color: #dc2626; }
+.att-summary-bar__actions { margin-left: auto; display: flex; gap: 0.5rem; }
+.att-bulk-btn { padding: 0.5rem 0.9rem; border-radius: var(--radius-full); border: none; font-size: 0.8rem; font-weight: 700; cursor: pointer; font-family: var(--font-sans); transition: var(--transition); }
+.att-bulk-btn--present { background: #d1fae5; color: #065f46; }
+.att-bulk-btn--present:hover { background: #bbf7d0; }
+.att-bulk-btn--absent  { background: #fee2e2; color: #991b1b; }
+.att-bulk-btn--absent:hover  { background: #fecaca; }
+
+.att-table { table-layout: auto; }
+.att-row--absent { background: #fff5f5; }
+.att-note-input { width: 100%; padding: 0.35rem 0.6rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.8rem; font-family: var(--font-sans); outline: none; }
+.att-note-input:focus { border-color: var(--fc-accent); }
+
+.att-save-row { display: flex; justify-content: flex-end; padding-top: 1rem; border-top: 1px solid var(--gray-100); margin-top: 0.5rem; }

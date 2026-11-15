@@ -1,0 +1,93 @@
+/* FacultyOverview */
+.ov-page { gap: 1.5rem; }
+
+/* Hero */
+.fc-hero {
+  display: flex; align-items: center; gap: 1.75rem;
+  background: linear-gradient(135deg, #1c0f00 0%, #78350f 100%);
+  border-radius: var(--radius-xl); padding: 2rem 2.5rem;
+  color: white; flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(217,119,6,0.25);
+}
+.fc-hero__avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: linear-gradient(135deg, #d97706, #dc2626);
+  font-size: 1.5rem; font-weight: 800; color: white;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.fc-hero__info { flex: 1; min-width: 200px; }
+.fc-hero__name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+.fc-hero__meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+.fc-hero__meta span { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.fc-hero__quals { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+.fc-hero__qual-badge { font-size: 0.78rem; font-weight: 600; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); padding: 0.3rem 0.75rem; border-radius: var(--radius-full); color: rgba(255,255,255,0.85); }
+.fc-hero__status { font-size: 0.72rem; font-weight: 700; padding: 0.22rem 0.65rem; border-radius: var(--radius-full); text-transform: capitalize; }
+.fc-hero__status--active   { background: #dcfce7; color: #16a34a; }
+.fc-hero__status--inactive { background: var(--gray-200); color: var(--gray-600); }
+.fc-hero__status--on-leave { background: #fff7ed; color: #c2410c; }
+
+/* Stat cards */
+.fc-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.fc-stat-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  box-shadow: var(--shadow-sm); transition: var(--transition);
+  position: relative; overflow: hidden;
+}
+.fc-stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.fc-stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.fc-stat-card--amber::before  { background: linear-gradient(90deg,#d97706,#fbbf24); }
+.fc-stat-card--blue::before   { background: linear-gradient(90deg,#2563eb,#60a5fa); }
+.fc-stat-card--purple::before { background: linear-gradient(90deg,#7c3aed,#c084fc); }
+.fc-stat-card--orange::before { background: linear-gradient(90deg,#ea580c,#fb923c); }
+.fc-stat-card--green::before  { background: linear-gradient(90deg,#059669,#34d399); }
+.fc-stat-card--red::before    { background: linear-gradient(90deg,#dc2626,#f87171); }
+.fc-stat-card--teal::before   { background: linear-gradient(90deg,#0891b2,#22d3ee); }
+.fc-stat-card__icon { font-size: 1.75rem; width: 48px; height: 48px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #fffbeb; }
+.fc-stat-card__body { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.fc-stat-card__value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+.fc-stat-card__label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+.fc-stat-card__sub   { font-size: 0.72rem; color: var(--text-secondary); }
+.fc-stat-card__link  { position: absolute; top: 1rem; right: 1rem; font-size: 1rem; color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+.fc-stat-card__link:hover { color: var(--fc-accent); transform: translateX(2px); }
+
+/* Quick links */
+.fc-quick-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.fc-quick-link {
+  flex: 1; min-width: 130px; display: flex; flex-direction: column;
+  align-items: center; gap: 0.5rem; padding: 1.25rem 1rem;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); text-decoration: none;
+  transition: var(--transition); box-shadow: var(--shadow-sm);
+}
+.fc-quick-link:hover { border-color: var(--fc-accent); background: #fffbeb; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.fc-quick-link__icon  { font-size: 1.5rem; }
+.fc-quick-link__label { font-size: 0.8rem; font-weight: 700; color: var(--gray-700); text-align: center; }
+
+/* Bottom row */
+.fc-bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.fc-see-all { font-size: 0.8rem; font-weight: 600; color: var(--fc-accent); text-decoration: none; }
+.fc-see-all:hover { text-decoration: underline; }
+
+.fc-course-list { display: flex; flex-direction: column; gap: 0; list-style: none; }
+.fc-course-item { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px solid var(--gray-100); }
+.fc-course-item:last-child { border-bottom: none; }
+.fc-course-item__info { display: flex; flex-direction: column; gap: 2px; }
+.fc-course-item__code { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+.fc-course-item__name { font-size: 0.875rem; font-weight: 600; color: var(--gray-900); }
+.fc-course-item__right { display: flex; gap: 0.4rem; }
+
+.fc-activity-list { display: flex; flex-direction: column; gap: 0; list-style: none; }
+.fc-activity-item { display: flex; align-items: flex-start; gap: 0.85rem; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-100); }
+.fc-activity-item:last-child { border-bottom: none; }
+.fc-activity-item__icon { font-size: 1.1rem; width: 32px; height: 32px; background: var(--gray-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fc-activity-item__body { display: flex; flex-direction: column; gap: 2px; }
+.fc-activity-item__desc { font-size: 0.84rem; font-weight: 500; color: var(--gray-800); }
+.fc-activity-item__meta { font-size: 0.75rem; color: var(--text-muted); }
+
+@media (max-width: 1100px) { .fc-stats-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 768px)  { .fc-bottom-row { grid-template-columns: 1fr; } }
+@media (max-width: 540px)  { .fc-stats-grid { grid-template-columns: 1fr; } .fc-hero { padding: 1.5rem; } }

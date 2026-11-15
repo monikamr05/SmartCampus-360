@@ -1,0 +1,116 @@
+/* =============================================
+   Faculty Analytics Page
+   ============================================= */
+.fan-page { gap: 1.5rem; }
+
+/* ── Controls ── */
+.fan-controls { display: flex; align-items: flex-end; gap: 0.75rem; flex-wrap: wrap; }
+.fan-filter-group { display: flex; flex-direction: column; gap: 0.3rem; }
+.fan-filter-label { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.fan-input { padding: 0.52rem 0.65rem; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.875rem; font-family: var(--font-sans); background: var(--gray-50); outline: none; transition: var(--transition); }
+.fan-input:focus { border-color: var(--fc-accent, #d97706); background: var(--white); }
+
+/* ── Disclaimer ── */
+.fan-disclaimer { display: flex; align-items: flex-start; gap: 0.65rem; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.82rem; color: #1d4ed8; line-height: 1.55; }
+.fan-disclaimer span:first-child { font-size: 1.1rem; flex-shrink: 0; }
+
+/* ── Course selector tabs ── */
+.fan-course-tabs { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.fan-course-tab {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 0.65rem 1rem; border-radius: var(--radius-md);
+  border: 1.5px solid var(--border); background: var(--gray-50);
+  cursor: pointer; font-family: var(--font-sans); transition: var(--transition);
+  text-align: left; min-width: 160px;
+}
+.fan-course-tab:hover { border-color: var(--fc-accent, #d97706); background: #fffbeb; }
+.fan-course-tab--active  { border-color: var(--fc-accent, #d97706); background: #fffbeb; }
+.fan-course-tab--warn    { border-left: 3px solid #d97706; }
+.fan-course-tab--critical{ border-left: 3px solid #dc2626; }
+.fan-course-tab__code { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.fan-course-tab__name { font-size: 0.84rem; font-weight: 600; color: var(--gray-900); }
+.fan-course-tab__badges { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 2px; }
+.fan-course-tab__badge  { font-size: 0.65rem; font-weight: 700; padding: 0.12rem 0.45rem; border-radius: var(--radius-full); }
+.fan-course-tab__badge--att { background: #fef3c7; color: #92400e; }
+.fan-course-tab__badge--ac  { background: #fee2e2; color: #991b1b; }
+
+/* ── Summary strip ── */
+.fan-summary-strip {
+  display: flex; gap: 0; flex-wrap: wrap;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);
+}
+.fan-summary-item {
+  flex: 1; min-width: 110px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 1.1rem 0.75rem; text-align: center;
+  border-right: 1px solid var(--gray-100);
+}
+.fan-summary-item:last-child { border-right: none; }
+.fan-summary-item__icon { font-size: 1.3rem; }
+.fan-summary-item__val  { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+.fan-summary-item__lbl  { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ── Detail tabs ── */
+.fan-detail-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.fan-detail-tab {
+  padding: 0.52rem 1.25rem; border-radius: var(--radius-full);
+  border: 1.5px solid var(--border); background: var(--white);
+  font-size: 0.875rem; font-weight: 600; cursor: pointer;
+  font-family: var(--font-sans); transition: var(--transition); color: var(--gray-600);
+}
+.fan-detail-tab:hover { border-color: var(--fc-accent, #d97706); color: var(--fc-accent, #d97706); }
+.fan-detail-tab--active { background: linear-gradient(135deg, #d97706, #dc2626); border-color: transparent; color: white; }
+
+/* ── Content ── */
+.fan-content { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* ── Charts row ── */
+.fan-charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+
+/* ── Panel header with search ── */
+.fan-panel-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.fan-search { padding: 0.5rem 0.75rem; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-size: 0.82rem; font-family: var(--font-sans); outline: none; background: var(--gray-50); transition: var(--transition); min-width: 180px; }
+.fan-search:focus { border-color: var(--fc-accent, #d97706); background: var(--white); }
+
+/* ── Table ── */
+.fan-table { }
+.fan-row--warn     { background: #fffbeb; }
+.fan-row--critical { background: #fff5f5; }
+
+/* ── Badges ── */
+.fan-badge { display: inline-flex; padding: 0.22rem 0.65rem; border-radius: var(--radius-full); font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+.fan-badge--warn     { background: #fef3c7; color: #92400e; }
+.fan-badge--critical { background: #fee2e2; color: #991b1b; }
+
+/* ── Top performers list ── */
+.fan-top-list   { display: flex; flex-direction: column; gap: 0.5rem; }
+.fan-top-item   { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0.9rem; border-radius: var(--radius-md); border: 1px solid var(--border); }
+.fan-top-item--gold   { background: #fffbeb; border-color: #fcd34d; }
+.fan-top-item--silver { background: var(--gray-50); border-color: var(--gray-200); }
+.fan-top-item--bronze { background: #fff7ed; border-color: #fed7aa; }
+.fan-top-item__rank   { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; width: 24px; text-align: center; color: var(--gray-700); flex-shrink: 0; }
+.fan-top-item__info   { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.fan-top-item__name   { font-weight: 700; font-size: 0.875rem; color: var(--gray-900); }
+.fan-top-item__id     { font-size: 0.72rem; color: var(--text-muted); }
+.fan-top-item__right  { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+
+/* ── OK / empty banners ── */
+.fan-ok-banner { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; }
+.fan-ok-banner span { font-size: 2rem; flex-shrink: 0; }
+.fan-ok-banner strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.2rem; }
+.fan-ok-banner p { font-size: 0.84rem; color: var(--text-muted); }
+.fan-empty { display: flex; align-items: center; gap: 0.75rem; padding: 1.5rem; }
+.fan-empty span { font-size: 2rem; flex-shrink: 0; }
+.fan-empty strong { font-size: 0.9rem; font-weight: 700; color: var(--gray-900); }
+.fan-empty p { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ── Tooltip ── */
+.fan-tooltip { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.65rem 0.9rem; box-shadow: var(--shadow-lg); font-size: 0.82rem; min-width: 140px; }
+.fan-tooltip__label { font-weight: 700; color: var(--gray-900); margin-bottom: 0.4rem; border-bottom: 1px solid var(--gray-100); padding-bottom: 0.3rem; }
+.fan-tooltip__row   { display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); padding: 0.1rem 0; }
+.fan-tooltip__row strong { margin-left: auto; color: var(--gray-900); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) { .fan-charts-row { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .fan-summary-strip { flex-direction: column; } .fan-summary-item { border-right: none; border-bottom: 1px solid var(--gray-100); flex-direction: row; justify-content: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; } .fan-summary-item:last-child { border-bottom: none; } }

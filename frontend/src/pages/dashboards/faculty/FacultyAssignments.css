@@ -1,0 +1,29 @@
+/* FacultyAssignments */
+.asgn-toolbar { display: flex; gap: 1.25rem; align-items: flex-end; flex-wrap: wrap; }
+.asgn-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.asgn-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.asgn-card:hover { box-shadow: var(--shadow-md); }
+.asgn-card__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.25rem; cursor: pointer; transition: background 0.15s; }
+.asgn-card__header:hover { background: var(--gray-50); }
+.asgn-card__left  { display: flex; flex-direction: column; gap: 0.35rem; flex: 1; min-width: 0; }
+.asgn-card__title { font-size: 1rem; font-weight: 700; color: var(--gray-900); }
+.asgn-card__desc  { font-size: 0.82rem; color: var(--text-secondary); display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.asgn-card__meta  { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--text-muted); flex-wrap: wrap; }
+.asgn-card__right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0; }
+.asgn-counts-row  { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.asgn-count       { font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: var(--radius-full); }
+.asgn-count--submitted { background: #d1fae5; color: #065f46; }
+.asgn-count--graded    { background: #dbeafe; color: #1d4ed8; }
+.asgn-card__actions { display: flex; gap: 0.4rem; }
+.asgn-chevron { color: var(--gray-400); transition: transform 0.2s; }
+.asgn-chevron--open { transform: rotate(180deg); }
+.asgn-type-badge { font-size: 0.68rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: var(--radius-full); text-transform: capitalize; align-self: flex-start; background: #fffbeb; color: #92400e; }
+
+/* Submissions panel */
+.asgn-submissions { border-top: 1px solid var(--gray-100); padding: 1.25rem; background: var(--gray-50); }
+.asgn-submissions__header { font-size: 0.82rem; font-weight: 700; color: var(--gray-700); margin-bottom: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Table action buttons */
+.fc-tbl-btn { width: 30px; height: 30px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--white); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--gray-500); transition: var(--transition); flex-shrink: 0; }
+.fc-tbl-btn:hover { background: #fffbeb; color: var(--fc-accent); border-color: var(--fc-accent); }
+.fc-tbl-btn--danger:hover { background: #fef2f2; color: #dc2626; border-color: #fecaca; }

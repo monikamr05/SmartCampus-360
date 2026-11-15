@@ -1,0 +1,120 @@
+/* =============================================
+   Student Timetable Page
+   ============================================= */
+.tt-page { gap: 1.5rem; }
+
+/* Day tabs */
+.tt-day-tabs {
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.tt-day-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 0.6rem 1.1rem; border-radius: var(--radius-md);
+  border: 1.5px solid transparent; background: none;
+  cursor: pointer; font-family: var(--font-sans);
+  transition: var(--transition); position: relative;
+}
+.tt-day-tab:hover { background: var(--gray-50); border-color: var(--border); }
+.tt-day-tab--active {
+  background: #f0fdf4; border-color: #059669; color: #065f46;
+}
+.tt-day-tab--today::after {
+  content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 4px; border-radius: 50%; background: #059669;
+}
+.tt-day-tab__name { font-size: 0.875rem; font-weight: 700; }
+.tt-day-tab__count {
+  font-size: 0.65rem; font-weight: 700; min-width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+  background: #dcfce7; color: #15803d; border-radius: var(--radius-full);
+  padding: 0 4px;
+}
+.tt-day-tab--active .tt-day-tab__count { background: #059669; color: white; }
+.tt-day-tab__dot { width: 6px; height: 6px; border-radius: 50%; background: #059669; }
+
+/* Day view */
+.tt-day-view {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+.tt-day-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.25rem; padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+.tt-day-header__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--gray-900); }
+.tt-day-header__today-badge {
+  font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.6rem;
+  background: #dcfce7; color: #15803d; border-radius: var(--radius-full);
+}
+.tt-day-header__count { font-size: 0.82rem; color: var(--text-muted); margin-left: auto; }
+
+.tt-slots-col { display: flex; flex-direction: column; gap: 0.85rem; }
+
+.tt-free-day {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.75rem; padding: 2.5rem; color: var(--text-muted); font-size: 0.95rem;
+}
+.tt-free-day span:first-child { font-size: 2rem; }
+
+/* Slot card */
+.tt-slot {
+  border-radius: var(--radius-md); padding: 1rem 1.25rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+  transition: var(--transition);
+}
+.tt-slot:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.tt-slot__time  { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); }
+.tt-slot__name  { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); }
+.tt-slot__meta  { display: flex; align-items: center; gap: 0.75rem; }
+.tt-slot__code  { font-size: 0.75rem; font-weight: 700; background: rgba(0,0,0,0.06); padding: 0.15rem 0.5rem; border-radius: 4px; color: var(--gray-600); }
+.tt-slot__room  { font-size: 0.75rem; color: var(--text-muted); }
+.tt-slot__inst  { font-size: 0.75rem; color: var(--text-secondary); }
+.tt-slot__type  { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; align-self: flex-start; }
+
+/* Weekly grid */
+.tt-weekly-panel {}
+.tt-weekly-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.6rem;
+  overflow-x: auto;
+}
+.tt-week-col {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  min-width: 100px;
+}
+.tt-week-col--today .tt-week-col__header { color: #059669; font-weight: 800; }
+.tt-week-col__header {
+  font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  text-align: center; padding: 0.35rem 0;
+  background: var(--gray-50); border-radius: var(--radius-sm);
+}
+.tt-week-col__free { font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: 0.5rem 0; }
+.tt-week-slot {
+  border-radius: var(--radius-sm); padding: 0.4rem 0.6rem;
+  display: flex; flex-direction: column; gap: 2px;
+  transition: var(--transition); cursor: default;
+}
+.tt-week-slot:hover { opacity: 0.85; }
+.tt-week-slot__time { font-size: 0.65rem; color: var(--text-muted); }
+.tt-week-slot__code { font-size: 0.72rem; font-weight: 700; color: var(--gray-800); }
+
+/* Legend */
+.tt-legend {
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+  font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;
+}
+.tt-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+.tt-legend-dot  { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .tt-weekly-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .tt-day-tabs { gap: 0.3rem; }
+  .tt-day-tab { padding: 0.5rem 0.75rem; }
+}

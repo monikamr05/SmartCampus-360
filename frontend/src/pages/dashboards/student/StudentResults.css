@@ -1,0 +1,85 @@
+/* =============================================
+   Student Results Page
+   ============================================= */
+.res-page { gap: 1.5rem; }
+.res-controls { display: flex; align-items: center; gap: 0.75rem; }
+
+/* CGPA banner */
+.res-gpa-banner {
+  background: linear-gradient(135deg, #0a1628 0%, #064e3b 100%);
+  border-radius: var(--radius-xl); padding: 1.75rem 2rem;
+  display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+  box-shadow: 0 8px 32px rgba(5,150,105,0.2);
+}
+.res-gpa-banner__main { display: flex; flex-direction: column; align-items: center; gap: 2px; flex-shrink: 0; }
+.res-gpa-banner__val  { font-family: var(--font-display); font-size: 3rem; font-weight: 900; color: #34d399; line-height: 1; }
+.res-gpa-banner__lbl  { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; }
+.res-gpa-banner__sems { display: flex; gap: 0.6rem; flex-wrap: wrap; flex: 1; }
+.res-sem-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 0.6rem 1rem; border-radius: var(--radius-md);
+  border: 1.5px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.65); cursor: pointer; font-family: var(--font-sans);
+  font-size: 0.8rem; font-weight: 600; transition: var(--transition);
+}
+.res-sem-btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); }
+.res-sem-btn--active { background: rgba(52,211,153,0.2); border-color: #34d399; color: #34d399; }
+.res-sem-btn__gpa { font-size: 0.72rem; font-weight: 700; }
+
+/* Semester label bar */
+.res-sem-header {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 0.85rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+.res-sem-header__label { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--gray-900); }
+.res-sem-header__sgpa  { font-size: 0.875rem; color: var(--text-secondary); }
+.res-sem-header__sgpa strong { color: #059669; font-size: 1.1rem; }
+
+/* Results table */
+.res-table-wrap { overflow-x: auto; }
+.res-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.res-table thead th {
+  background: var(--gray-50); padding: 0.75rem 0.85rem;
+  text-align: left; font-size: 0.72rem; font-weight: 700;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.res-th-max { font-weight: 400; color: var(--text-muted); }
+.res-table tbody tr { border-bottom: 1px solid var(--gray-100); transition: background 0.15s; }
+.res-table tbody tr:last-child { border-bottom: none; }
+.res-table tbody tr:hover { background: var(--gray-50); }
+.res-table td { padding: 0.85rem 0.85rem; vertical-align: middle; }
+
+.res-subj-cell { display: flex; flex-direction: column; gap: 2px; }
+.res-subj-name { font-weight: 600; color: var(--gray-900); white-space: nowrap; }
+.res-subj-code { font-size: 0.72rem; color: var(--text-muted); }
+
+.res-grade-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-weight: 800; font-size: 0.8rem;
+}
+
+.res-status { font-size: 0.75rem; font-weight: 700; padding: 0.22rem 0.65rem; border-radius: var(--radius-full); }
+.res-status--pass { background: #dcfce7; color: #16a34a; }
+.res-status--fail { background: #fee2e2; color: #dc2626; }
+
+/* Score bar */
+.res-score-bar-wrap { display: flex; align-items: center; gap: 0.5rem; }
+.res-score-bar { flex: 1; height: 6px; background: var(--gray-200); border-radius: 3px; overflow: hidden; min-width: 50px; }
+.res-score-bar__fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+.res-score-bar__val { font-size: 0.8rem; font-weight: 700; color: var(--gray-700); white-space: nowrap; flex-shrink: 0; }
+.res-score-bar__max { font-weight: 400; color: var(--text-muted); }
+
+/* Charts */
+.res-charts-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.25rem; }
+.res-chart-panel {}
+
+/* Import view-toggle from attendance */
+.att-view-toggle { display: flex; background: var(--gray-100); border-radius: var(--radius-full); padding: 3px; gap: 2px; }
+.att-view-btn { padding: 0.4rem 0.9rem; border-radius: var(--radius-full); border: none; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: transparent; color: var(--gray-500); font-family: var(--font-sans); transition: var(--transition); }
+.att-view-btn--active { background: var(--white); color: #059669; box-shadow: var(--shadow-sm); }
+
+@media (max-width: 900px) { .res-charts-row { grid-template-columns: 1fr; } }

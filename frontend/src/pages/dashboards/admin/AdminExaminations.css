@@ -1,0 +1,43 @@
+/* AdminExaminations */
+.exam-overview-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 1rem; }
+.exam-course-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-sm); cursor: pointer; transition: var(--transition);
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.exam-course-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.exam-course-card--active { border-color: var(--blue-500); background: var(--blue-50); box-shadow: 0 0 0 2px var(--blue-200), var(--shadow-md); }
+.exam-course-card__header { display: flex; align-items: center; justify-content: space-between; }
+.exam-course-card__code   { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.exam-course-card__sem    { font-size: 0.72rem; color: var(--text-muted); }
+.exam-course-card__name   { font-size: 0.875rem; font-weight: 700; color: var(--gray-900); }
+.exam-course-card__dept   { font-size: 0.72rem; color: var(--text-muted); }
+.exam-course-card__stats  { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-top: 0.25rem; }
+.exam-stat { font-size: 0.72rem; font-weight: 700; padding: 0.18rem 0.55rem; border-radius: var(--radius-full); }
+.exam-stat--total { background: var(--gray-100); color: var(--gray-600); }
+.exam-stat--pass  { background: #dcfce7; color: #15803d; }
+.exam-stat--fail  { background: #fee2e2; color: #991b1b; }
+.exam-course-card__avg  { font-size: 0.75rem; color: var(--text-secondary); }
+.exam-grade-dots { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 0.25rem; }
+
+/* Detail panel */
+.exam-detail-panel {}
+.exam-detail-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); background: var(--gray-50); flex-wrap: wrap; gap: 0.75rem; }
+
+/* Shared nav btn (reuse from att) */
+.att-detail-nav__btn { padding: 0.45rem 1rem; border-radius: var(--radius-full); border: 1.5px solid var(--border); background: var(--white); font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: var(--font-sans); transition: var(--transition); color: var(--gray-600); }
+.att-detail-nav__btn:hover { border-color: var(--blue-400); color: var(--blue-600); background: var(--blue-50); }
+.att-detail-nav__btn--active { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+
+/* Stats strip */
+.exam-stats-strip { display: flex; gap: 2rem; padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); background: var(--white); flex-wrap: wrap; }
+.exam-stats-strip__item { display: flex; flex-direction: column; gap: 2px; }
+.exam-stats-strip__val  { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--gray-900); line-height: 1; }
+.exam-stats-strip__lbl  { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Table specifics */
+.exam-table th { white-space: nowrap; }
+.res-th-max { font-weight: 400; color: var(--text-muted); }
+.exam-row--editing { background: #fffbeb; }
+.exam-mark-input { width: 55px; padding: 0.35rem 0.4rem; border: 1.5px solid var(--blue-400); border-radius: var(--radius-sm); font-size: 0.875rem; font-family: var(--font-sans); text-align: center; outline: none; background: var(--white); }

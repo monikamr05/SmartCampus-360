@@ -1,0 +1,46 @@
+/* AdminTimetable */
+.tt-layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.25rem; align-items: start; }
+
+/* Left list panel */
+.tt-list-panel { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+.tt-list-header { padding: 0.85rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.tt-list-item { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0.85rem 1rem; border-bottom: 1px solid var(--gray-100); cursor: pointer; transition: background 0.15s; }
+.tt-list-item:last-child { border-bottom: none; }
+.tt-list-item:hover { background: var(--gray-50); }
+.tt-list-item--active { background: #eff6ff; border-left: 3px solid var(--blue-600); }
+.tt-list-item__left { display: flex; flex-direction: column; gap: 2px; }
+.tt-list-item__dept { font-size: 0.875rem; font-weight: 600; color: var(--gray-900); }
+.tt-list-item__meta { font-size: 0.72rem; color: var(--text-muted); }
+.tt-list-item__right { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+
+/* Grid panel */
+.tt-grid-panel { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+.tt-grid-panel--empty { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 4rem 2rem; color: var(--text-muted); font-size: 0.95rem; }
+.tt-grid-panel--empty span { font-size: 2.5rem; }
+
+.tt-grid-header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); background: var(--gray-50); flex-wrap: wrap; gap: 0.75rem; }
+.tt-grid-header__title   { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--gray-900); }
+.tt-grid-header__academic { font-size: 0.82rem; color: var(--text-muted); }
+
+/* Weekly grid */
+.tt-weekly { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; min-width: 700px; overflow-x: auto; }
+.tt-day-col { border-right: 1px solid var(--gray-100); }
+.tt-day-col:last-child { border-right: none; }
+.tt-day-col__header { padding: 0.6rem 0.75rem; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); background: var(--gray-50); border-bottom: 1px solid var(--border); text-align: center; }
+.tt-day-col__slots  { padding: 0.6rem; display: flex; flex-direction: column; gap: 0.5rem; min-height: 80px; }
+.tt-day-col__empty  { font-size: 0.72rem; color: var(--text-muted); text-align: center; padding: 1rem 0; }
+
+.tt-slot-card { border-radius: var(--radius-sm); padding: 0.6rem 0.65rem; background: var(--gray-50); border: 1px solid var(--border); position: relative; transition: var(--transition); }
+.tt-slot-card:hover { box-shadow: var(--shadow-sm); background: var(--white); }
+.tt-slot-card__time  { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2px; }
+.tt-slot-card__name  { font-size: 0.75rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
+.tt-slot-card__meta  { font-size: 0.65rem; color: var(--text-muted); }
+.tt-slot-card__type  { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 3px; }
+.tt-slot-card__actions { display: flex; gap: 3px; margin-top: 5px; }
+.tt-slot-card__actions .tbl-btn { width: 24px; height: 24px; }
+
+/* Legend */
+.tt-legend { display: flex; gap: 1rem; flex-wrap: wrap; padding: 0.75rem 1.25rem; border-top: 1px solid var(--border); background: var(--gray-50); font-size: 0.78rem; color: var(--text-secondary); font-weight: 500; }
+.tt-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+
+@media (max-width: 1100px) { .tt-layout { grid-template-columns: 1fr; } }
